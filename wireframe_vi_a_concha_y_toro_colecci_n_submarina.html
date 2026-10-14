@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EV18Z9NWXR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EV18Z9NWXR');
+</script>
+  gtag('config', 'G-EV18Z9NWXR');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe - Viña Concha y Toro | Colección Submarina</title>
@@ -688,4 +699,15 @@
         });
     </script>
 </body>
+    <script>
+  // Envía el evento clic_cta_principal cuando el visitante hace clic en el CTA
+  document.querySelectorAll('#cta-principal, .cta-principal').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      var seccion = boton.closest('section');
+      gtag('event', 'clic_cta_principal', {
+        ubicacion: seccion && seccion.id ? seccion.id : 'sin_seccion'
+      });
+    });
+  });
+</script>
 </html>
